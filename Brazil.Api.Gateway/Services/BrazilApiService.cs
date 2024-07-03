@@ -49,9 +49,7 @@ namespace Brazil.Api.Gateway.Services
             var response = await _httpClient.GetAsync($"https://brasilapi.com.br/api/banks/v1/{bankCode}");
 
             if (response.StatusCode == HttpStatusCode.NotFound)
-            {
                 throw new BankCodeNotFoundException(bankCode);
-            }
 
             response.EnsureSuccessStatusCode();
 
