@@ -6,11 +6,11 @@ using System.Text.Json;
 
 namespace Brazil.Api.Gateway.Services
 {
-    public class CepService : ICepService
+    public class BrazilApiService : ICepService
     {
         private readonly HttpClient _httpClient;
 
-        public CepService(HttpClient httpClient)
+        public BrazilApiService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -21,6 +21,8 @@ namespace Brazil.Api.Gateway.Services
 
             if (response.StatusCode == HttpStatusCode.NotFound)
                 throw new CepNotFoundException(cep);
+            else if (response.StatusCode == HttpStatusCode.BadRequest)
+                throw new CepBadRequestException(cep);
 
             response.EnsureSuccessStatusCode();
 

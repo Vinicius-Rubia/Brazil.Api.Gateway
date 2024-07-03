@@ -6,11 +6,11 @@ namespace Brazil.Api.Gateway.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class CepController : ControllerBase
+    public class BrazilApiController : ControllerBase
     {
         private readonly ICepService _cepService;
 
-        public CepController(ICepService cepService)
+        public BrazilApiController(ICepService cepService)
         {
             _cepService = cepService;
         }
@@ -26,6 +26,10 @@ namespace Brazil.Api.Gateway.Controllers
             catch (CepNotFoundException ex)
             {
                 return NotFound(ex.Message);
+            }
+            catch (CepBadRequestException ex)
+            {
+                return BadRequest(ex.Message);
             }
             catch (HttpRequestException ex)
             {
