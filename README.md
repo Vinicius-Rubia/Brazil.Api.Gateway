@@ -27,7 +27,7 @@ Este endpoint permite recuperar informações detalhadas associadas a um CEP esp
 
 #### 📝 Exemplos de Uso:
 
-- **Requisição:** GET /api/cep/12345678
+- **Requisição:** GET /api/v1/BrazilApi/cep/12345678
 
 - **Resposta (200 OK):**
 ```json
@@ -54,7 +54,7 @@ Este endpoint permite recuperar uma lista de todos os bancos disponíveis na Bra
 
 #### 📝 Exemplos de Uso:
 
-- **Requisição:** GET /api/banks
+- **Requisição:** GET /api/v1/BrazilApi/banks
 
 - **Resposta (200 OK):**
 ```json
@@ -94,7 +94,7 @@ Este endpoint permite recuperar informações detalhadas de um banco específico
 
 #### 📝 Exemplos de Uso:
 
-- **Requisição:** GET /api/banks/001
+- **Requisição:** GET /api/v1/BrazilApi/banks/001
 
 - **Resposta (200 OK):**
 ```json
