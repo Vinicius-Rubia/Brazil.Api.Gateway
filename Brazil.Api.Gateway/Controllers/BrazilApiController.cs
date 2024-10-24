@@ -8,9 +8,9 @@ namespace Brazil.Api.Gateway.Controllers
     [Route("api/v1/[controller]")]
     public class BrazilApiController : ControllerBase
     {
-        private readonly ICepService _cepService;
+        private readonly IBrazilApiService _cepService;
 
-        public BrazilApiController(ICepService cepService)
+        public BrazilApiController(IBrazilApiService cepService)
         {
             _cepService = cepService;
         }

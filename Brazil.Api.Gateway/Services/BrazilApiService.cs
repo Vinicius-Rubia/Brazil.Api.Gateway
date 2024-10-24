@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace Brazil.Api.Gateway.Services
 {
-    public class BrazilApiService : ICepService
+    public class BrazilApiService : IBrazilApiService
     {
         private readonly HttpClient _httpClient;
 
